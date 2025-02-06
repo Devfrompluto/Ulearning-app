@@ -4,10 +4,9 @@ import 'package:ulearning_riverpod/common/widgets/app_bar.dart';
 import 'package:ulearning_riverpod/common/widgets/app_textfields.dart';
 import 'package:ulearning_riverpod/common/widgets/button_widgets.dart';
 import 'package:ulearning_riverpod/common/widgets/text_widgets.dart';
-import 'package:ulearning_riverpod/pages/sign_in/widgets/sign_in_widget.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +20,19 @@ class SignIn extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // top login button
-                thirdPartyLogin(),
+                SizedBox(height: 30.h),
                 // more login option message
                 Center(
-                  child:
-                      text14Normal(text: "Or use your email account to login"),
+                  child: text14Normal(
+                      text: "Enter your details below & free sign up"),
                 ),
-                SizedBox(height: 50.h),
+                SizedBox(height: 40.h),
+                // username text box
+                appTextField(
+                    text: "User name",
+                    iconName: "assets/icons/user.png",
+                    hintText: "Enter your user name"),
+                SizedBox(height: 20.h),
                 // email text box
                 appTextField(
                     text: "Email",
@@ -42,21 +46,27 @@ class SignIn extends StatelessWidget {
                     hintText: "Enter your password",
                     obscureText: true),
                 SizedBox(height: 20.h),
+                // password text box
+                appTextField(
+                    text: "Confirm Password",
+                    iconName: "assets/icons/lock.png",
+                    hintText: "Enter your confirmed password",
+                    obscureText: true),
+                SizedBox(height: 20.h),
                 // forgot text
                 Container(
                   margin: EdgeInsets.only(left: 25.w),
-                  child: textUnderline(text: "Forgot Password?"),
+                  child: text14Normal(
+                      text:
+                          "By creating an account you agree with our terms and conditions."),
                 ),
-                SizedBox(height: 90.h),
-                // app login button
-                Center(child: appButton(text: "Login")),
-                SizedBox(height: 20),
+                SizedBox(height: 70.h),
+
                 // app register button
                 Center(
                     child: appButton(
                   text: "Register",
-                  isLogin: false,
-                  context: context,
+                  isLogin: true,
                 )),
                 //appButton(),
               ],
