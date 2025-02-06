@@ -12,11 +12,11 @@ in the given space
 
 AppBar buildAppBar() {
   return AppBar(
-    backgroundColor: Colors.white,
+    //backgroundColor: Colors.white,
     bottom: PreferredSize(
       preferredSize: Size.fromHeight(1),
       child: Container(
-        color: Colors.red,
+        color: Colors.grey.withOpacity(0.3),
         height: 1,
       ),
     ),

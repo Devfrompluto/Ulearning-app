@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ulearning_riverpod/common/widgets/app_shadow.dart';
 import 'package:ulearning_riverpod/common/widgets/text_widgets.dart';
-import 'package:ulearning_riverpod/pages/sign_in/sign_in.dart';
+//import 'package:ulearning_riverpod/pages/sign_in/sign_in.dart';
 
 Widget appOnboardingPage(PageController controller,
     {String imagePath = 'assets/images/reading.png',
