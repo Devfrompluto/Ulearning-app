@@ -53,11 +53,12 @@ class SignIn extends StatelessWidget {
                 SizedBox(height: 20),
                 // app register button
                 Center(
-                    child: appButton(
-                  text: "Register",
-                  isLogin: false,
-                  context: context,
-                )),
+                  child: appButton(
+                      text: "Register",
+                      isLogin: false,
+                      context: context,
+                      func: () => Navigator.pushNamed(context, "/register")),
+                ),
                 //appButton(),
               ],
             ),

@@ -67,6 +67,7 @@ class SignUp extends StatelessWidget {
                     child: appButton(
                   text: "Register",
                   isLogin: true,
+                  context: context,
                 )),
                 //appButton(),
               ],

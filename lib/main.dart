@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_riverpod/common/utils/app_styles.dart';
 import 'package:ulearning_riverpod/pages/sign_in/sign_in.dart';
+import 'package:ulearning_riverpod/pages/sign_up/sign_up.dart';
 import 'package:ulearning_riverpod/pages/welcome/welcome.dart';
 
 void main() {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           routes: {
             "/": (context) => Welcome(),
             "/signIn": (context) => SignIn(),
+            "/register": (context) => SignUp(),
           },
           //home: child!,
           //debugShowCheckedModeBanner: false,
@@ -46,7 +48,6 @@ class MyHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final count = ref.watch(appCount);
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
