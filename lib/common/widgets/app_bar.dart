@@ -7,7 +7,7 @@ preferredSize widget gives us a space or height from the appbar downwards and we
 in the given space
 */
 
-AppBar buildAppBar() {
+AppBar buildAppBar({String title = ""}) {
   return AppBar(
     //backgroundColor: Colors.white,
     bottom: PreferredSize(
@@ -17,6 +17,6 @@ AppBar buildAppBar() {
         height: 1,
       ),
     ),
-    title: text16Normal(text: "Login", color: AppColors.primaryText),
+    title: text16Normal(text: title, color: AppColors.primaryText),
   );
 }
