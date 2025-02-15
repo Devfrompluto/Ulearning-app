@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486029739491",
+    "project_id": "ulearning-app-e497a",
+    "storage_bucket": "ulearning-app-e497a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486029739491:android:5fecbff1ce3147f550ccd6",
+        "android_client_info": {
+          "package_name": "devfrompluto.org.ulearning_riverpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPsOpNY16ZJP4XHAzQkF9rvmboLy6Rl0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
