@@ -74,7 +74,10 @@ class SignUpController {
         toastInfo("The password is too weak");
       } else if (e.code == 'email-already-in-use') {
         toastInfo("This email address is already in use");
+      } else if (e.code == 'invalid-credential') {
+        toastInfo("Credential provided is invalid");
       }
+      print(e.code);
     } catch (e) {
       if (kDebugMode) {
         print(e.toString());

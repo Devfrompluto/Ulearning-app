@@ -42,48 +42,48 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final appCount = Provider<int>((ref) {
-  return 1;
-});
+// final appCount = Provider<int>((ref) {
+//   return 1;
+// });
 
-class MyHomePage extends ConsumerWidget {
-  const MyHomePage({
-    super.key,
-  });
+// class MyHomePage extends ConsumerWidget {
+//   const MyHomePage({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text("Riverpod App"),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '0',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context, WidgetRef ref) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         // TRY THIS: Try changing the color here to a specific color (to
+//         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+//         // change color while the other colors stay the same.
+//         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//         // Here we take the value from the MyHomePage object that was created by
+//         // the App.build method, and use it to set our appbar title.
+//         title: Text("Riverpod App"),
+//       ),
+//       body: Center(
+//         // Center is a layout widget. It takes a single child and positions it
+//         // in the middle of the parent.
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             const Text(
+//               'You have pushed the button this many times:',
+//             ),
+//             Text(
+//               '0',
+//               style: Theme.of(context).textTheme.headlineMedium,
+//             ),
+//           ],
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: () {},
+//         tooltip: 'Increment',
+//         child: const Icon(Icons.add),
+//       ),
+//     );
+//   }
+// }
