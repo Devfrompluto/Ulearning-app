@@ -1,9 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ulearning_riverpod/common/entities/entities.dart';
 import 'package:ulearning_riverpod/common/global/global_loader.dart';
+import 'package:ulearning_riverpod/common/utils/constants.dart';
+import 'package:ulearning_riverpod/global.dart';
 import 'package:ulearning_riverpod/pages/sign_in/notifier/sign_in_notifier.dart';
 
 import '../../common/widgets/popup_messages.dart';
@@ -57,7 +60,9 @@ class SignInController {
         loginRequestEntity.avatar = photoUrl;
         loginRequestEntity.type = 1;
         asyncPostAllData(loginRequestEntity);
-        print("User logged in");
+        if (kDebugMode) {
+          print("User logged in");
+        }
       } else {
         toastInfo("Login error");
       }
@@ -69,7 +74,6 @@ class SignInController {
       } else if (e.code == 'invalid-credential') {
         toastInfo("Invalid credential");
       }
-      print(e.code);
     } catch (e) {
       if (kDebugMode) {
         print(e.toString());
@@ -79,8 +83,32 @@ class SignInController {
   }
 
   void asyncPostAllData(LoginRequestEntity loginRequestEntity) {
-    // ref.read(appLoaderProvider.notifier).setLoaderValue(true);
+    // we need to talk to server
 
-    // ref.read(appLoaderProvider.notifier).setLoaderValue(false);
+    // have local storage
+    try {
+      var navigator = Navigator.of(ref.context);
+      // try to remember the user info
+      Global.storageService
+          .setString(AppConstants.STORAGE_USER_PROFILE_KEY, "123");
+      Global.storageService
+          .setString(AppConstants.STORAGE_USER_TOKEN_KEY, "12345");
+
+      navigator.pushNamedAndRemoveUntil("/application", (route) => false);
+      // navigator.push(
+      //   MaterialPageRoute(
+      //     builder: (BuildContext context) => Scaffold(
+      //       appBar: AppBar(),
+      //       body: Application(),
+      //     ),
+      //   ),
+      // );
+      //navigator.pushNamed("/application");
+    } catch (e) {
+      if (kDebugMode) {
+        print(e.toString());
+      }
+    }
+    // redirect to new page
   }
 }

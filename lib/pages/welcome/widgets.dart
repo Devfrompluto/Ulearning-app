@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ulearning_riverpod/common/utils/constants.dart';
 import 'package:ulearning_riverpod/common/widgets/app_shadow.dart';
 import 'package:ulearning_riverpod/common/widgets/text_widgets.dart';
+import 'package:ulearning_riverpod/global.dart';
 //import 'package:ulearning_riverpod/pages/sign_in/sign_in.dart';
 
 Widget appOnboardingPage(PageController controller,
@@ -41,9 +43,12 @@ Widget _nextButton(int index, PageController controller, BuildContext context) {
           curve: Curves.linear,
         );
       } else {
+        // remember if we are first time or not
+        Global.storageService
+            .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_KEY, true);
         Navigator.pushNamed(
           context,
-          "/signIn",
+          "/sign_in",
         );
       }
     },
